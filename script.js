@@ -1,4 +1,12 @@
 
+//BG image, fetch API or upload Assets? Hmm
+
+
+//Greeting page 
+//Accept input as name 
+// Display greeting + name and remove 'input' and 'p' from display
+
+
 //Fetch Weather API
 function fetchWeather() {
   const api = 'd5dfc41a8e4641aaf539e5ec13113706'
@@ -32,8 +40,7 @@ weatherElement.append(temperature)
 }
 
 
-
-//---------------------------------------------------------------------------
+//Render Date and Time
 
 const now = new Date();
 const hours = now.getHours();
@@ -255,8 +262,6 @@ quote.textContent = ` "${quotes[currentQuoteIndex].quote}" `
 author.textContent = `~ ${quotes[currentQuoteIndex].author}`
 value.textContent = ` ${quotes[currentQuoteIndex].value} `
 
-console.log(quotes[0].quote)
-
 quoteElement.append(quote)
 quoteElement.append(author)
 quoteElement.append(value)
@@ -270,4 +275,75 @@ function changeQuote() {
 
 }
 
-setInterval(changeQuote, 60000)
+setInterval(changeQuote, 1000)
+
+
+//Main Quest
+const quest = document.querySelector('.main')
+const questHeader = document.querySelector('#quest-header')
+const inputQuest = document.querySelector('#quest-input')
+
+
+inputQuest.addEventListener('keypress', 
+  function (e) {
+    if(e.key === 'Enter'){
+      const questName = document.createElement('h3')
+      questName.setAttribute('id', 'quest-phrase')
+      if(inputQuest.value !== ''){
+        questName.textContent = inputQuest.value
+        console.log(questName)
+        localStorage.setItem('questName', questName.textContent) // Need to have the entire element appended
+        quest.append(questName)
+        questHeader.style.display = 'none'
+        inputQuest.style.display = 'none'
+      }
+      else {
+        questName.textContent = 'No Main Quest For Today'
+        quest.append(questName)
+      }
+    }
+  }
+)
+if(document.getElementById('quest-phrase')){
+  const questPhrase = document.getElementById('quest-phrase')
+  questPhrase.addEventListener('click', function(){
+  console.log('clicked') //questPhrase is null, why?
+}
+)
+}
+
+
+
+//Task List
+//Need to store tasks in an array in localstorage
+const taskList = document.querySelector('.todo')
+const inputTask = document.querySelector('#task')
+
+inputTask.addEventListener('keypress', 
+  function (e) {
+    if(e.key === 'Enter'){
+      if(inputTask.value !== ''){
+        const task = document.createElement('li')
+        task.textContent = inputTask.value
+        taskList.append(task)
+        inputTask.value = ''
+      }
+    
+    }
+  }
+)
+
+taskList.style.display = 'none'
+
+
+
+function showList () {
+  if(taskList.style.display === 'none') {
+    taskList.style.display = 'block'
+  }
+  else {
+    taskList.style.display = 'none'
+  }
+  console.log(taskList.style.display)
+}
+

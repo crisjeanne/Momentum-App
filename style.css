@@ -12,3 +12,12 @@ body {
   background: rgba(0, 0, 0, 0.226);
 }
 
+.todo {
+  margin: 5em;
+  border: 0.2em solid blue;
+}
+
+#task-button:hover {
+  cursor: pointer;
+  color: rgb(59, 59, 59);
+}

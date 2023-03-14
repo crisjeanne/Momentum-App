@@ -6,9 +6,12 @@
     <title>Momentum App</title>
     
     <script src="script.js" async=""></script>
-  <link rel="stylesheet" href="http://127.0.0.1:5500/style.css?_cacheOverride=1678510615613"></head>
+    <link rel="stylesheet" href="style.css">
 
-  <body cz-shortcut-listen="true">
+
+</head>
+
+  <body>
 
     <div class="bg-image"></div>
 <div class="container">
@@ -17,9 +20,7 @@
     <input type="text">
   </div>
 
-  <div class="weather-container">
-    <div id="weather">weather</div>
-  <h2>Manila</h2><p>clear sky</p><p>29.59 °C</p></div>
+  <div class="weather-container"></div>
 
   <div class="clock-container">
     <div class="time">
@@ -30,22 +31,23 @@
 
   <div class="quotes-container">
     <div class="quotes">
-      <p class="quote">Quote<p> "The greatest glory in living lies not in never falling, but in rising every time we fall." </p><p>~ Nelson Mandela</p><p style="font-style: italic;"> Perseverance </p></p>
-      <p class="author">Name</p>
+      <p class="quote">
+      </p>
     </div>
   </div>
 
   <div class="main-quest">
     <div class="main">
       <p id="quest-header">What is your main quest for today?</p>
-      <input type="text">
+      <input id="quest-input" type="text">
     </div>
   </div>
 
-  <div class="modal">
+  <div class="task-list">
+    <button id="task-button" onclick="showList()">TaskList</button>
     <div class="todo">
       <p id="todo-header">You have a number of objectives left to complete</p>
-      <input type="text" placeholder="Add Objectives">
+      <input id="task" type="text" placeholder="Add Objectives">
     </div>
   </div>
 </div>
