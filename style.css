@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono&family=Raleway:wght@200&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,700;1,100;1,200;1,300;1,400;1,500&family=Roboto:wght@500&display=swap');
 
 * {
   box-sizing: border-box;
@@ -6,18 +6,316 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: #f5f5f5;
-  font-family: "Poppins", sans-serif;
-  background: rgba(0, 0, 0, 0.226);
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  color: white;
 }
 
-.todo {
-  margin: 5em;
-  border: 0.2em solid blue;
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
-#task-button:hover {
+.bg-image {
+  z-index: 2;
+  padding: 1em;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 1fr 2fr 2fr 1fr 1fr;
+}
+
+/*Weather Styling*/
+.weather-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+  text-align: center;
+}
+.weather-container img {
+  margin: 0;
+  padding: 0;
+  width: 20%;
+}
+
+.weather-container h2 {
+  font-size: 1em;
+}
+
+.weather-container p {
+  font-size: 0.8em;
+}
+
+.timer-container {
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+
+/*Date & Time Styling*/
+.clock-container {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+
+.clock-container .clock {
+  font-size: 5em;
+}
+
+.clock-container .clock:hover {
   cursor: pointer;
-  color: rgb(59, 59, 59);
 }
+
+.clock-container .date{
+  font-size: 1em;
+}
+
+/*Greeting Styling*/
+.greeting-container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  grid-row: 4 / 5;
+  grid-column: 2 / 3;
+  text-align: center;
+  place-items: center;
+  place-content: center;
+  letter-spacing: 3px;
+}
+
+.greeting-container p {
+  font-size: 4em;
+  font-weight: 500;
+}
+
+.greeting-container h3 {
+  font-size: 2em;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px black;
+}
+
+.greeting-container > .greeting {
+  display: grid;
+}
+
+.greeting-container > .greeting > input {
+  font-size: 2em;
+  letter-spacing: 3px;
+  place-content: center ;
+  margin: 0 5em;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.greeting-container > .greeting > input[type="text"]:not(:placeholder-shown) {
+  color: white;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2em;
+  text-shadow: 1px 1px 1px black;
+}
+
+.greeting-container > .greeting > input:focus {
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+/*Main Styling*/
+.main-quest {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  grid-row: 5 / 6;
+  grid-column: 2 / 3;
+  text-align: center;
+  place-items: center;
+  place-content: center;
+  letter-spacing: 3px;
+  
+}
+
+.main-quest .main {
+  text-shadow: 1px 1px 1px black;
+  margin: 0;
+  font-size: 1.5em;
+  letter-spacing: 3px;
+  padding-bottom: 4em;
+  width: 100%;
+}
+
+.main-quest .main h4{
+  cursor: pointer;
+}
+
+.main-quest .main input{
+  width: 100%;
+  padding: 0 2em;
+  font-size: 1em;
+  letter-spacing: 3px;
+  place-content: center ;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.main-quest .main input:focus{
+  padding: 0 2em;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+.main-quest .main input[type="text"]:not(:placeholder-shown) {
+  color: white;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  text-shadow: 1px 1px 1px black;
+}
+
+/*Quotes Styling*/
+.quotes-container {
+  display: grid;
+  margin: 0;
+  place-items: center;
+  grid-row: 6 / 7;
+  grid-column: 1 / 4;
+  text-align: center;
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+.quotes-container .quotes {
+  margin: auto;
+}
+
+.quotes-container .quotes p {
+  margin: auto;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.801);
+  text-shadow: 1px 1px 1px black;
+}
+
+/*Task List Styling*/
+.task-list {
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  grid-row: 1 / 6;
+  grid-column: 1 / 2;
+}
+
+.task-list .task-count{
+  font-size: 0.9em;
+  font: bold;
+  margin: auto;
+  padding: 1em;
+  text-shadow: 2px 2px 5px black;
+}
+
+.task-list .task-container{
+  background-color: #0000005e;
+  border-radius: 0.5em;
+  width: 100%;
+  padding: 1em;
+  display: none;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
+.task-list .task-button{
+  color: rgba(255, 255, 255, 0.767);
+  text-shadow: 10px 10px 5px black;
+  background-color: transparent;
+  font-size: 1.3em;
+  font-weight: bold;
+  border: none;
+  margin: auto;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+.task-list input {
+  font-size: medium;
+  margin: 0 2em;
+  background-color: transparent;
+  border: none;
+  margin-top: 2em;
+  cursor: pointer;
+}
+
+.task-list input:focus {
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+.task-list input::placeholder{
+  color: white;
+}
+
+.task-list ul li {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none ;
+  margin: 0.3em 0;
+}
+
+.task-list ul li input {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.task-list input::placeholder{
+  color: white;
+}
+
+.task-list input[type="text"]:not(:placeholder-shown) {
+  color: white;
+}
+
+
+.task-list ul li button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-shadow: 3px 2px 10px black;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.task-list ul li input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+  color: rgba(87, 87, 87, 0.726);
+}
+
+
+.timer-container input {
+  width: 10%;
+}
+

@@ -1,59 +1,60 @@
 <!DOCTYPE html>
-<html lang = en>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Momentum App</title>
-    
-    <script src="script.js" async=""></script>
-    <link rel="stylesheet" href="style.css">
 
-
-</head>
+    <script src="script.js" type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
   <body>
+    <div id="background"></div>
+    <div class="bg-image">
+      <div class="intro"></div>
+      <div class="greeting-container">
+        <div class="greeting"></div>
+      </div>
 
-    <div class="bg-image"></div>
-<div class="container">
-  <div class="name">
-    <p>What is your Name?</p>
-    <input type="text">
-  </div>
+      <div class="weather-container"></div>
 
-  <div class="weather-container"></div>
+      <div class="timer-container">
+        <div id="timer">
+        </div>
+      </div>
 
-  <div class="clock-container">
-    <div class="time">
-      <p class="clock">13:5:33</p>
-      <p class="date">March 11, 2023</p>
+      <div class="clock-container">
+        <div class="time">
+          <p class="clock"></p>
+          <p class="date"></p>
+        </div>
+      </div>
+
+      <div class="quotes-container">
+        <div class="quotes"></div>
+      </div>
+
+      <div class="main-quest">
+        <div class="main">
+          <p id="quest-header">What is your main quest for today?</p>
+          <input id="quest-input" type="text" />
+        </div>
+      </div>
+
+      <div class="task-list">
+        <div class="task-container">
+          <span class="task-count"></span>
+          <ul id="list"></ul>
+          <input
+            type="text"
+            id="input"
+            placeholder="Add Task"
+            style="text-align: center"
+          />
+        </div>
+        <button class="task-button">Task</button>
+      </div>
     </div>
-  </div>
-
-  <div class="quotes-container">
-    <div class="quotes">
-      <p class="quote">
-      </p>
-    </div>
-  </div>
-
-  <div class="main-quest">
-    <div class="main">
-      <p id="quest-header">What is your main quest for today?</p>
-      <input id="quest-input" type="text">
-    </div>
-  </div>
-
-  <div class="task-list">
-    <button id="task-button" onclick="showList()">TaskList</button>
-    <div class="todo">
-      <p id="todo-header">You have a number of objectives left to complete</p>
-      <input id="task" type="text" placeholder="Add Objectives">
-    </div>
-  </div>
-</div>
-    
-
-
-
-</body>
+  </body>
 </html>
